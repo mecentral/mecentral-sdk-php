@@ -1,0 +1,27 @@
+{
+  "name": "mecentral/sdk",
+  "description": "Official MeCentral API client: vault deposits, custody grants, People Graph, webhooks.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["mecentral", "vault", "custody", "documents", "sdk", "api-client"],
+  "homepage": "https://mecentral.org/developers/sdks",
+  "support": {
+    "source": "https://github.com/mecentral/mecentral-sdk-php",
+    "issues": "https://github.com/mecentral/mecentral-sdk-php/issues",
+    "docs": "https://mecentral.org/developers/api"
+  },
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MeCentral\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable"
+}
