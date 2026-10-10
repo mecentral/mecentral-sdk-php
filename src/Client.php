@@ -99,12 +99,16 @@ final class Client
     }
 
     /**
-     * Self-service SANDBOX provisioning for proof-of-concept builds.
-     * Authenticates with the operator token (INTEGRATION_PROVISION_TOKEN),
-     * not an API key. The raw key is in the response and nowhere else.
+     * Self-service provisioning for build sessions: SANDBOX by default, or
+     * PRODUCTION (mec_prd_) with mode 'production' plus an operator_reason when
+     * the door's operator has switched production on. Authenticates with the
+     * operator token (INTEGRATION_PROVISION_TOKEN), not an API key; the door
+     * answers only to allowlisted source addresses. The raw key is in the
+     * response and nowhere else.
      *
      * @param array{
      *   slug: string, name?: string, purpose?: string, scopes?: list<string>,
+     *   mode?: 'sandbox'|'production', operator_reason?: string,
      *   ttl_days?: int, rotate?: bool
      * } $params
      * @return array<string,mixed>
